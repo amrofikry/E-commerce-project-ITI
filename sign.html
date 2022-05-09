@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sign.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <img src="/images/pictbos.png" width="50%" height="50%">
+
+
+    <div class="div">
+        <div onload="check()">
+
+            <div class="loginbox">
+
+                <p class="login">Sign In</p>
+                <div class="childdiv">
+                    <form class="form" method="post">
+                        <label id="la1" for="email">Email</label>
+                        <input type="email" name="Email" id="email" placeholder="Enter Email" required class="inputbox">
+                        <br><br>
+                        <label id="la2" for="password">Password</label>
+                        <input type="password" name="pwd" id="password" placeholder="Enter Password" required class="inputbox">
+                        <br><br>
+                        <input type="checkbox" name="rememberme" id="rememberme" onclick="setcookie()">Remember Me
+                        <br><br>
+                        <input type="submit" name="login" value="Sign In" class="btn">
+                        <p class="linkspara"><a href="#" class="links">forgot password ?</a></p>
+                        <p class="linkspara"><a href="/join-us.html" class="links">create new account</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // check if stored data from register-form is equal to entered data in the   login-form
+        function check() {
+
+            // stored data from the register-form
+            var storedEmail = localStorage.getItem('email');
+            var storedPwd = localStorage.getItem('pwd');
+
+            // entered data from the login-form
+            var email = document.getElementById('email');
+            var Pwd = document.getElementById('Pwd');
+
+            // check if stored data from register-form is equal to data from login form
+            if (email.value !== storedEmail || Pwd.value !== Pw) {
+                alert('ERROR');
+            } else {
+                alert('You are loged in.');
+            }
+        }
+    </script>
+</body>
+
+</html>
